@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function index () {
     return (
@@ -10,6 +11,12 @@ export default function index () {
             </Head>
 
             <h1>Thanks for reporting!</h1>
+            <p>Start over?</p>
+            <Link href={'/report'}>
+                <a className={'border px-2 py-1'}>
+                    Report new result
+                </a>
+            </Link>
         </div>
     );
 }

@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       </Head>
 
         <div className={'flex justify-center items-center'}>
-            <div className={'w-full text-center md:w-72 bg-red-500'}>
+            <div className={'w-full text-center md:w-72'}>
                 <div>
                     <Link href={'/report'}>
                         <a>
