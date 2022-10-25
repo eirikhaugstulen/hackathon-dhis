@@ -2,15 +2,17 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import {QueryClient} from "@tanstack/query-core";
 import {QueryClientProvider} from "@tanstack/react-query";
+import {Toaster} from "react-hot-toast";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient()
+    const queryClient = new QueryClient()
 
-  return (
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
-  )
+    return (
+        <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+            <Toaster/>
+        </QueryClientProvider>
+    )
 }
 
 export default MyApp
