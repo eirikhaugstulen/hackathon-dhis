@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 
 export default function Index () {
     const router = useRouter();
-    const { mutate, isLoading } = useMutation((values): any => axios.post('/test'), {
+    const { mutate, isLoading } = useMutation((values): any => axios.post('/api/post', values), {
         onSuccess: () => {
             toast.success('Data is reported')
             router.push('/journal');
@@ -33,14 +33,15 @@ export default function Index () {
 
                 <Formik
                     initialValues={{
-                        systolic_blood_pressure: undefined,
-                        diastolic_blood_pressure: undefined,
-                        pulse: undefined,
-                        weight: undefined
+                        id: 'dwWgzxGz0S4',
+                        systolic: 0,
+                        diastolic: 0,
+                        pulse: 0,
+                        weight: 0
                     }}
                     validationSchema={Yup.object({
-                        systolic_blood_pressure: Yup.number().typeError('Please input a number').required('Required'),
-                        diastolic_blood_pressure: Yup.number().typeError('Please input a number').required('Required'),
+                        systolic: Yup.number().typeError('Please input a number').required('Required'),
+                        diastolic: Yup.number().typeError('Please input a number').required('Required'),
                         pulse: Yup.number().typeError('Please input a number').required('Required'),
                         weight: Yup.number().typeError('Please input a number').required('Required')
                     })}
@@ -49,14 +50,14 @@ export default function Index () {
                 >
                     <Form className={'flex flex-col'}>
                         <CustomField
-                            name={'systolic_blood_pressure'}
+                            name={'systolic'}
                             label={'Systolic blood pressure'}
                             placeholder={''}
                             suffix={'mmHg'}
                         />
 
                         <CustomField
-                            name={'diastolic_blood_pressure'}
+                            name={'diastolic'}
                             label={'Diastolic blood pressure'}
                             placeholder={''}
                             suffix={'mmHg'}
@@ -82,7 +83,10 @@ export default function Index () {
                                     <ArrowLeftIcon className={'text-black w-5 h-5'} />
                                 </a>
                             </Link>
-                            <button className={'flex gap-1 items-center rounded-full bg-primary text-white px-5 py-2 text-sm hover:bg-primary-hover'}>
+                            <button
+                                type={"submit"}
+                                className={'flex gap-1 items-center rounded-full bg-primary text-white px-5 py-2 text-sm hover:bg-primary-hover'}
+                            >
                                 <ArrowDownTrayIcon className={'w-4 h-4'} />
                                 <p>Save</p>
                             </button>

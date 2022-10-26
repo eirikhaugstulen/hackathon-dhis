@@ -3,7 +3,7 @@ import {ErrorMessage, Field} from "formik";
 interface CustomField {
     name: string,
     label: string,
-    suffix: string,
+    suffix?: string,
     placeholder: string,
 }
 
