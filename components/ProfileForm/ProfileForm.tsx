@@ -6,7 +6,7 @@ import {ArrowDownTrayIcon, ArrowLeftIcon} from "@heroicons/react/24/solid";
 import Link from "next/link";
 
 export const ProfileForm = () => {
-    const { data, isLoading, isError } = useQuery(['profile'], () => axios.get('http://172.104.146.122:8080/api/self-reporting/info/dwWgzxGz0S4'))
+    const { data, isLoading, isError } = useQuery(['profile'], () => axios.get('https://sr.winterop.cloud:8443/api/self-reporting/info/dwWgzxGz0S4'))
 
     const valuesFromApi = { ...data?.data?.info }
     const initialValues = {

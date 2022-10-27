@@ -4,7 +4,7 @@ import axios from "axios";
 import {Loading} from "../JournalRecord/Loading/Loading";
 
 export const JournalPage = () => {
-    const { data, isLoading, isError } = useQuery(['vitals'], (): any => axios.get('http://172.104.146.122:8080/api/self-reporting/vital-signs/dwWgzxGz0S4'))
+    const { data, isLoading, isError } = useQuery(['vitals'], (): any => axios.get('https://sr.winterop.cloud:8443/api/self-reporting/vital-signs/dwWgzxGz0S4'))
 
     if (isLoading) {
         return (

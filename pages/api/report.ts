@@ -14,7 +14,7 @@ export default function handler(
 
     var config = {
         method: 'post',
-        url: 'http://172.104.146.122:8080/api/self-reporting/vital-signs',
+        url: 'https://sr.winterop.cloud:8443/api/self-reporting/vital-signs',
         headers: {
             'Content-Type': 'application/json'
         },
