@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                             <Form>
                                 {step === 0 ? (
                                     <>
-                                        <CustomField name={'name'} label={'Last name'} placeholder={''} />
+                                        <CustomField name={'name'} label={'Phone number'} placeholder={''} />
                                         <CustomField name={'identifier'} label={'Identifier'} placeholder={''} />
                                     </>
                                 ) : (

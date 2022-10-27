@@ -20,23 +20,23 @@ export const JournalRecord = ({ vital }: JournalRecordProps) => (
             </div>
 
             <JournalRecordRow
-                title={'Diastolic blood pressure'}
-                value={vital.diastolic}
+                title={'Systolic blood pressure'}
+                value={`${vital.systolic} mmHg`}
             />
 
             <JournalRecordRow
-                title={'Systolic blood pressure'}
-                value={vital.systolic}
+                title={'Diastolic blood pressure'}
+                value={`${vital.diastolic} mmHg`}
             />
 
             <JournalRecordRow
                 title={'Pulse'}
-                value={vital.pulse}
+                value={`${vital.pulse} BPM`}
             />
 
             <JournalRecordRow
                 title={'Weight'}
-                value={vital.weight}
+                value={`${vital.weight} Kg`}
             />
         </div>
     </>
