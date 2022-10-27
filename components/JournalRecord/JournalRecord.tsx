@@ -1,34 +1,42 @@
 import {JournalRecordRow} from "../JournalRecordRow/JournalRecordRow";
 
-interface JournalRecordProps {
+export interface Vital {
     date: string,
+    diastolic: string,
+    systolic: string,
+    pulse: string,
+    weight: string,
 }
 
-export const JournalRecord = ({ date }: JournalRecordProps) => (
+interface JournalRecordProps {
+    vital: Vital,
+}
+
+export const JournalRecord = ({ vital }: JournalRecordProps) => (
     <>
-        <div className={'w-full bg-purple-100/50 rounded py-2 px-3'}>
+        <div className={'w-full bg-purple-100/50 text-secondary-text rounded py-2 px-3'}>
             <div>
-                {date}
+                {vital?.date}
             </div>
 
             <JournalRecordRow
                 title={'Diastolic blood pressure'}
-                value={'23'}
+                value={vital.diastolic}
             />
 
             <JournalRecordRow
                 title={'Systolic blood pressure'}
-                value={'14'}
+                value={vital.systolic}
             />
 
             <JournalRecordRow
                 title={'Pulse'}
-                value={'98'}
+                value={vital.pulse}
             />
 
             <JournalRecordRow
                 title={'Weight'}
-                value={'88'}
+                value={vital.weight}
             />
         </div>
     </>

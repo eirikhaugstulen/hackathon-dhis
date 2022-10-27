@@ -6,7 +6,7 @@ interface JournalRecordProps {
 }
 
 export const JournalRecordRow = ({ title, value }: JournalRecordProps) => (
-    <div className={'flex items-center justify-between'}>
+    <div className={'flex items-center text-primary-text justify-between'}>
         <div className={'flex items-center gap-2'}>
             <CheckCircleIcon className={'w-4 h-4'} />
             <p>{title}</p>

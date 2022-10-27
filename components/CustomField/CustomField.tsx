@@ -4,7 +4,7 @@ interface CustomField {
     name: string,
     label: string,
     suffix?: string,
-    placeholder: string,
+    placeholder?: string,
 }
 
 export const CustomField = ({ name, label, suffix, placeholder }: CustomField) => (

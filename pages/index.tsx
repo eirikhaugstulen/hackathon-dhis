@@ -1,18 +1,17 @@
+// @ts-nocheck
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from "next/link";
 import {ArrowRightIcon, ArrowRightOnRectangleIcon, UserCircleIcon} from "@heroicons/react/24/outline";
-import {Field, Form, Formik} from "formik";
+import {Form, Formik} from "formik";
 import {CustomField} from "../components/CustomField/CustomField";
 import {useCallback, useState} from "react";
+import {AutoTabProvider} from 'react-auto-tab';
 
 const Home: NextPage = () => {
     const [step, setStep] = useState(0)
 
-    const onChangeNumber = useCallback(() => {
-
-    }, [])
-
+    // @ts-ignore
     return (
         <div>
             <Head>
@@ -27,7 +26,7 @@ const Home: NextPage = () => {
                     <h1 className={'text-primary text-2xl mt-2'}>Self reporting app</h1>
                     <p className={'text-secondary'}>Log in</p>
 
-                    <div className={'my-10'}>
+                    <div className={'my-5'}>
                         <Formik
                             initialValues={{
                                 name: '',
@@ -42,12 +41,14 @@ const Home: NextPage = () => {
                                         <CustomField name={'identifier'} label={'Identifier'} placeholder={''} />
                                     </>
                                 ) : (
-                                    <div className={'flex gap-2'}>
-                                        <input className={'border text-center rounded py-4 px-1 w-16'} />
-                                        <input className={'border text-center rounded py-4 px-1 w-16'} />
-                                        <input className={'border text-center rounded py-4 px-1 w-16'} />
-                                        <input className={'border text-center rounded py-4 px-1 w-16'} />
-                                    </div>
+                                    <AutoTabProvider>
+                                        <div className={'flex gap-2'}>
+                                            <input className={'border text-center rounded py-4 px-1 w-16'} maxLength={1} tabbable />
+                                            <input className={'border text-center rounded py-4 px-1 w-16'} maxLength={1} tabbable />
+                                            <input className={'border text-center rounded py-4 px-1 w-16'} maxLength={1} tabbable />
+                                            <input className={'border text-center rounded py-4 px-1 w-16'} maxLength={1} tabbable />
+                                        </div>
+                                    </AutoTabProvider>
                                 )}
                             </Form>
                         </Formik>
